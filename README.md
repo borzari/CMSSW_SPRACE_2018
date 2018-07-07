@@ -3,7 +3,7 @@ In this branch i'll include some commands really importants in Linux, SSH and Gi
 
 ## Linux
 
-The `pwd` is a very useful command, this shows the folder as you stay. E. g. you are in the folder Desktop this command will return:
+The `pwd` is a very useful command, this shows the folder as you stay. E. g. if you are in the folder Desktop this command will return:
 
 `/home/user/Desktop`
 
