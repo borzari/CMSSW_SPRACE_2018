@@ -120,3 +120,9 @@ Clone the github folder
 
 #### Adding remotes and synchronizing
 
+Look at your remote(s): 
+
+`git remote`
+
+`git remote -v`
+
