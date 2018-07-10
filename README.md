@@ -118,3 +118,5 @@ Clone the github folder
 
 `git branch -a`
 
+#### Adding remotes and synchronizing
+
