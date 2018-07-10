@@ -186,4 +186,6 @@ Now that you have made your change, you can submit it for inclusion in the centr
 
 When you open the page to send a pull request on GitHub, you will notice that you can send a pull request to any fork of the repo (and any branch). 
 
-![Screenshot](https://github.com/denerslemos/CMSSW_SPRACE_2018/tree/Linux_SSH_Git/0.png)
+<p align="center">
+  <img width="460" height="300" src="https://github.com/denerslemos/CMSSW_SPRACE_2018/tree/Linux_SSH_Git/0.png">
+</p>
