@@ -2,10 +2,11 @@
 In this branch i'll include some commands really importants in Linux, SSH and Github.
 
 ## Linux
+Linux is an operating system. An operating system is software that manages all of the hardware resources associated with your desktop or laptop. To put it simply – the operating system manages the communication between your software and your hardware. Without the operating system (often referred to as the “OS”), the software wouldn’t function.
 
-The `pwd` is a very useful command, this shows the folder as you stay. E. g. if you are in the folder Desktop this command will return:
+Some important commands:
 
-`/home/user/Desktop`
+-`pwd`, shows the folder as you stay. E. g. `/home/user/Desktop`
 
 
 
@@ -20,6 +21,10 @@ To access the SPRACE Cluster use:
 To access the LXplus use:
 
 `ssh -XY user@lxplus.cern.ch`
+
+The `-XY` enables the graphical interface (X11 forwarding).
+
+
 
 
 
