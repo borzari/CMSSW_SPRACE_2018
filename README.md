@@ -6,7 +6,7 @@ Linux is an operating system. An operating system is software that manages all o
 
 Some important commands:
 
--`pwd`, shows the folder as you stay. E. g. `/home/user/Desktop`
+- `pwd`, shows the folder as you stay. E. g. `/home/user/Desktop`
 
 
 
