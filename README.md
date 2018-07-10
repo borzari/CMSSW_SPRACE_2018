@@ -93,6 +93,7 @@ Vi or Vim is a screen-oriented text editor originally created for the Unix opera
 More informations and other commands click [here](https://www.cs.colostate.edu/helpdocs/vi.html).
 
 ## GitHub
+GitHub is Git’s cloud-based publishing tool and hosting platform. It also has a desktop application for locally storing projects. Git is used by programmers, developers, and designers to store projects and keep track of changes to their files.
 
 #### Set up your .gitconfig
 `git config --global user.name [Name]`
