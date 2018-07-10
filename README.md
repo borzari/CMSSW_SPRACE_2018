@@ -41,12 +41,11 @@ Vi or Vim is a screen-oriented text editor originally created for the Unix opera
 
 #### Important commands:
 
-- `vi filename` edit filename starting at line 1;
+- `vi filename` edit filename;
 - `vi -r filename` recover filename that was being edited when system crashed;
-
-- `:x or :wq` quit vi, writing out modified file to file named in original invocation;
-- `:q` quit (or exit) vi;
-- `:q!` quit vi even though latest changes have not been saved for this vi call;
-
+- `:x or :wq` save & quit;
+- `:q` quit vi;
+- `:q!` quit vi without save (force quit);
+- `:w` save file;
 
 ## GitHub
