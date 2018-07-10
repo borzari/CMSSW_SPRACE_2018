@@ -28,7 +28,7 @@ The `-XY` enables the graphical interface (X11 forwarding).
 ## Vi or Vim
 Vi or Vim is a screen-oriented text editor originally created for the Unix operating system.
 
-### Difference between Vi and Vim:
+#### Difference between Vi and Vim:
 
 - Vim has been ported to a much wider range of OS's than vi.
 - Vim includes support (syntax highlighting, code folding, etc) for several popular programming languages (C/C++, Python, Perl, shell, etc).
@@ -40,7 +40,7 @@ Vi or Vim is a screen-oriented text editor originally created for the Unix opera
 - Vim includes support for plugins, and finer control over config and startup files.
 - Vim can be scripted with vimscript, or with an external scripting language (e.g. python, perl, shell)
 
-### Important commands:
+#### Important commands:
 
 
 ## GitHub
