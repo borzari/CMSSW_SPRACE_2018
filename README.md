@@ -106,6 +106,15 @@ GitHub is Git’s cloud-based publishing tool and hosting platform. It also has 
 
 #### Collaboration on GitHub
 
-`mkdir scratch`
+Clone the github folder
 
-`git clone`
+`git clone https://github.com/denerslemos/Standard-Model.git`
+
+`cd Standard-Model`
+
+`ls -a`
+
+`ls .git`
+
+`git branch -a`
+
