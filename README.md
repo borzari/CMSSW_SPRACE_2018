@@ -34,6 +34,13 @@ If you like to work in your own computer you can download files or folders using
 ##### Copy folders from SPRACE Machine
 `scp -r user@access.sprace.org.br:/home/user/folder/ .`
 
+Sometimes we need to copy files for the grid structure, to do that we need to use srm (to use that the certificate is requested).
+##### Show the list of files
+`srmls srm://...`
+
+##### Copy files
+`srmcp srm://...`
+
 
 
 
