@@ -185,3 +185,6 @@ Push your topic branch, which now includes the new commit you just made, to orig
 Now that you have made your change, you can submit it for inclusion in the central repository.
 
 When you open the page to send a pull request on GitHub, you will notice that you can send a pull request to any fork of the repo (and any branch). 
+
+
+![alt text](https://github.com/denerslemos/CMSSW_SPRACE_2018/tree/Linux_SSH_Git/0.png "Logo Title Text 1")
