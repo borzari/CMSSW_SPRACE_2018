@@ -126,3 +126,56 @@ Look at your remote(s):
 
 `git remote -v`
 
+The "origin" remote is set by default when you use `git clone`. Because your repository is a fork, you also want to have a remote that points to the original repo, traditionally called "upstream". 
+
+`git remote add upstream https://github.com/denerslemos/Standard-Model.git`
+
+`git remote -v`
+
+Check for changes in upstream
+
+`git pull upstream master`
+
+Push your local master branch back to your remote fork: 
+
+`git pull origin master`
+
+`git remote`
+
+#### Making edits and committing 
+
+-> Ex. 1) Edit the table SM.md to add a new particle. The new particle is called a Giton, with symbol G, spin 2, charge 0, and mass 750 GeV.
+
+-> Ex. 2) Create a file quarks.md with the name of the 6 quarks.
+
+Once you have made changes in your working area, you have to stage the changes and then commit them. First, you can inspect the status of your working area.
+
+Try the following commands:
+
+`git status`
+
+`git status -s`
+
+`git diff`
+
+Now stage your change, and check the status:
+
+`git add SM.md`
+
+`git add quarks.md`
+
+`git status -s`
+
+Commit your change:
+
+`git commit -m "add Giton to standard model"`
+
+Push your topic branch, which now includes the new commit you just made, to origin: 
+
+`git push origin MyBranch`
+
+#### Making a pull request 
+
+Now that you have made your change, you can submit it for inclusion in the central repository.
+
+When you open the page to send a pull request on GitHub, you will notice that you can send a pull request to any fork of the repo (and any branch). 
