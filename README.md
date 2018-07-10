@@ -218,4 +218,4 @@ Copy the entire contents of the file and go to:
 
 `Your picture -> Settings -> SSH and GPG keys -> New SSH key`
 
-Choose one title and paste what you bopy before.
+Choose one title and paste what you copy before.
