@@ -5,11 +5,27 @@ In this branch i included some commands importants in Linux, SSH, Vi or Vim and 
 Linux is an operating system. An operating system is software that manages all of the hardware resources associated with your desktop or laptop. To put it simply – the operating system manages the communication between your software and your hardware. 
 
 #### Important commands:
+- `ẁhoami`, show the user name;
+- `pwd`, shows the folder as you stay. E. g. `/home/user/Desktop`;
+- `clear or CTRL+L`, clear the terminal;
+- `exit or CTRL+D`, quit the terminal;
+- `cd`, change directory;
+- `ls`, list the contents;
+- `mkdir`, create a folder;
+- `rm`, delete a file;
+- `rm -r or rmdir`, delete a folder;
+- `cat`,  displaying the contents of a file;
+- `find -iname "file"`, search the file in the computer;
+- `grep`, searches files for a given character string.
+- `apt-get`, install linux packages/programs.
+- `df -h`, displays information about the total disk space
+- `du -hs`, show the size of the file;
+- `free`,  displays information about RAM and swap space usage;
+- `diff`, compares the contents of any two files;
+- `chmod`, changes the access permissions;
+- `fs quota`, show quota in the machine;
 
-- `pwd`, shows the folder as you stay. E. g. `/home/user/Desktop`
-
-
-
+More informations and other commands click [here](https://www-uxsup.csx.cam.ac.uk/pub/doc/suse/suse9.0/userguide-9.0/ch24s04.html) or [here-2](https://searchdatacenter.techtarget.com/tutorial/77-Linux-commands-and-utilities-youll-actually-use).
 
 ## SSH
 The SSH (Secure Shell) is a network protocol that provides administrators with a secure way to access a remote computer. SSH also refers to the suite of utilities that implement the protocol. Secure Shell provides strong authentication and secure encrypted data communications between two computers connecting over an insecure network such as the Internet. SSH is widely used by network administrators for managing systems and applications remotely, allowing them to log in to another computer over a network, execute commands and move files from one computer to another.
