@@ -148,6 +148,12 @@ Push your local master branch back to your remote fork:
 
 -> Ex. 2) Create a file quarks.md with the name of the 6 quarks.
 
+When collaborating with other developers on GitHub, it is best to make a separate topic branch to store any changes you want to submit to the main repo. This way, you can keep the default branch in your fork synchronized with upstream, and then make another topic branch when you want to make more changes.
+
+Make a topic branch: 
+
+`git checkout -b MyBranch`
+
 Once you have made changes in your working area, you have to stage the changes and then commit them. First, you can inspect the status of your working area.
 
 Try the following commands:
