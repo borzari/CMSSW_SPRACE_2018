@@ -16,9 +16,9 @@ Linux is an operating system. An operating system is software that manages all o
 - `rm -r or rmdir`, delete a folder;
 - `cat`,  displaying the contents of a file;
 - `find -iname "file"`, search the file in the computer;
-- `grep`, searches files for a given character string.
-- `apt-get`, install linux packages/programs.
-- `df -h`, displays information about the total disk space
+- `grep`, searches files for a given character string;
+- `apt-get`, install linux packages/programs;
+- `df -h`, displays information about the total disk space;
 - `du -hs`, show the size of the file;
 - `free`,  displays information about RAM and swap space usage;
 - `diff`, compares the contents of any two files;
