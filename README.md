@@ -103,3 +103,9 @@ GitHub is Git’s cloud-based publishing tool and hosting platform. It also has 
 `git config --global user.github [Account]`
 
 `cat ~/.gitconfig`
+
+#### Collaboration on GitHub
+
+`mkdir scratch`
+
+`git clone`
