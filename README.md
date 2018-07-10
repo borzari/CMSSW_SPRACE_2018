@@ -2,9 +2,9 @@
 In this branch i'll include some commands really importants in Linux, SSH, Vi or Vim and Github.
 
 ## Linux
-Linux is an operating system. An operating system is software that manages all of the hardware resources associated with your desktop or laptop. To put it simply – the operating system manages the communication between your software and your hardware. Without the operating system (often referred to as the “OS”), the software wouldn’t function.
+Linux is an operating system. An operating system is software that manages all of the hardware resources associated with your desktop or laptop. To put it simply – the operating system manages the communication between your software and your hardware. 
 
-Some important commands:
+#### Important commands:
 
 - `pwd`, shows the folder as you stay. E. g. `/home/user/Desktop`
 
@@ -30,17 +30,23 @@ Vi or Vim is a screen-oriented text editor originally created for the Unix opera
 
 #### Difference between Vi and Vim:
 
-- Vim has been ported to a much wider range of OS's than vi.
-- Vim includes support (syntax highlighting, code folding, etc) for several popular programming languages (C/C++, Python, Perl, shell, etc).
-- Vim can be used to edit files using network protocols like SSH and HTTP.
-- Vim includes multilevel undo/redo.
-- Vim allows the screen to be split for editing multiple files.
-- Vim can edit files inside a compressed archive (gzip, zip, tar, etc).
-- Vim includes a built in diff for comparing files (vimdiff).
-- Vim includes support for plugins, and finer control over config and startup files.
-- Vim can be scripted with vimscript, or with an external scripting language (e.g. python, perl, shell)
+- Vim has been ported to a much wider range of OS's than vi;
+- Vim includes support (syntax highlighting, code folding, etc) for several popular programming languages (C/C++, Python, Perl, shell, etc);
+- Vim can be used to edit files using network protocols like SSH and HTTP;
+- Vim allows the screen to be split for editing multiple files;
+- Vim can edit files inside a compressed archive (gzip, zip, tar, etc);
+- Vim includes a built in diff for comparing files (vimdiff);
+- Vim includes support for plugins, and finer control over config and startup files;
+- Vim can be scripted with vimscript, or with an external scripting language (e.g. python, perl, shell);
 
 #### Important commands:
+
+- `vi filename` edit filename starting at line 1;
+- `vi -r filename` recover filename that was being edited when system crashed;
+
+- `:x or :wq` quit vi, writing out modified file to file named in original invocation;
+- `:q` quit (or exit) vi;
+- `:q!` quit vi even though latest changes have not been saved for this vi call;
 
 
 ## GitHub
