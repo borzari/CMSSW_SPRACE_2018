@@ -45,7 +45,10 @@ Vi or Vim is a screen-oriented text editor originally created for the Unix opera
 - `vi -r filename` recover filename that was being edited when system crashed;
 - `:x or :wq` save & quit;
 - `:q` quit vi;
-- `:q!` quit vi without save (force quit);
+- `:q!`quit vi without save (force quit);
 - `:w` save file;
+- `u` undo whatever you did;
+
+More informations here
 
 ## GitHub
