@@ -49,6 +49,6 @@ Vi or Vim is a screen-oriented text editor originally created for the Unix opera
 - `:w` save file;
 - `u` undo whatever you did;
 
-More informations here
+More informations and other commands [here](https://www.cs.colostate.edu/helpdocs/vi.html)
 
 ## GitHub
