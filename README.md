@@ -5,7 +5,7 @@ In this branch i included some commands importants in Linux, SSH, Vi or Vim and 
 Linux is an operating system. An operating system is software that manages all of the hardware resources associated with your desktop or laptop. To put it simply – the operating system manages the communication between your software and your hardware. 
 
 #### Important commands:
-- `ẁhoami`, show the user name;
+- `whoami`, show the user name;
 - `pwd`, shows the folder as you stay. E. g. `/home/user/Desktop`;
 - `clear or CTRL+L`, clear the terminal;
 - `exit or CTRL+D`, quit the terminal;
