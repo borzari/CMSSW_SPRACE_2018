@@ -93,3 +93,10 @@ Vi or Vim is a screen-oriented text editor originally created for the Unix opera
 More informations and other commands click [here](https://www.cs.colostate.edu/helpdocs/vi.html).
 
 ## GitHub
+
+#### Set up your .gitconfig
+`git config --global user.name [Name]
+git config --global user.email [Email]
+git config --global user.github [Account]`
+
+cat ~/.gitconfig
