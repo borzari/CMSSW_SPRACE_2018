@@ -185,3 +185,37 @@ Push your topic branch, which now includes the new commit you just made, to orig
 Now that you have made your change, you can submit it for inclusion in the central repository.
 
 When you open the page to send a pull request on GitHub, you will notice that you can send a pull request to any fork of the repo (and any branch). 
+
+### Generating a new SSH key
+
+Generating:
+`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+
+Press Enter:
+`Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]`
+
+Create a password:
+
+`Enter passphrase (empty for no passphrase): [Type a passphrase]`
+
+`Enter same passphrase again: [Type passphrase again]`
+
+### Adding your SSH key to the ssh-agent
+
+`eval "$(ssh-agent -s)"`
+
+`ssh-add ~/.ssh/id_rsa`
+
+### Adding a new SSH key to your GitHub account
+
+Open the file `id_rsa.pub`
+
+`vi ~/.ssh/id_rsa.pub`
+
+Copy the entire contents of the file and go to:
+
+`https://github.com/`
+
+`Your picture -> Settings -> SSH and GPG keys -> New SSH key`
+
+Choose one title and paste what you bopy before.
