@@ -89,4 +89,4 @@ To finish uses the command
 
 ### Exercise 4 - Find data in the DAS ( Data Aggregation Service) 
 
-In this exercise we will locate the MC dataset RelValZMM (Z -> mu mu) and the collision dataset /DoubleMuon/Run2017C-PromptReco-v3/MINIAOD using the Data Aggregation Service
+In this exercise we will locate the MC dataset RelValZMM (Z -> μμ) and the collision dataset /DoubleMuon/Run2017C-PromptReco-v3/MINIAOD using the Data Aggregation Service
