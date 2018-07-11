@@ -78,10 +78,15 @@ Now go to `CMSSW_9_3_2/src/` and use
 
 This last command will take some time to execute and will produce some long output, be patient. 
 
-After that your CMSSW is ready to work :D. To finish, go to you home and type
+After that you are ready to go! 
+
+To finish uses the command
 
 `echo $CMSSW_BASE`
 
 - 0) Paste the result of executing the above command in the form.
 
 
+### Exercise 4 - Find data in the DAS ( Data Aggregation Service) 
+
+In this exercise we will locate the MC dataset RelValZMM (Z -> mu mu) and the collision dataset /DoubleMuon/Run2017C-PromptReco-v3/MINIAOD using the Data Aggregation Service
