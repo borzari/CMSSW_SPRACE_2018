@@ -57,14 +57,31 @@ We will use the realease CMSSW_9_3_2. Let's setup that
 First we set the structure:
 
 `export SCRAM_ARCH=slc6_amd64_gcc630`
-This also can be included in the ~/.bash_profile or ~/.bashrc, the slc6 meanning that you set a machine with scientific linux 6 with c++ (gcc) 630.
+
+This also can be included in the ~/.bash_profile or ~/.bashrc, the slc6 meanning that you set a machine with scientific linux 6 with gcc structure 630.
 
 You can find out the existing releases installed on the local user interface by typing
 
-`scram list -a`
+`scram list -a CMSSW`
 
-or you can set first the SCRAM_ARCH and see which realease are avaiable using
+or you can set first the SCRAM_ARCH and see which realease are avaiable. How choose the CMSSW version you can see [here](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookWhichRelease#CmsswReleases)
 
-`scram list CMSSW`
+After setted the structure we can cal the CMSSW realease using:
+
+`cmsrel CMSSW_9_3_2`
+
+Now go to `CMSSW_9_3_2/src/` and use
+
+`cmsenv`
+
+`git cms-init`
+
+This last command will take some time to execute and will produce some long output, be patient. 
+
+After that your CMSSW is ready to work :D. To finish, go to you home and type
+
+`echo $CMSSW_BASE`
+
+- 0) Paste the result of executing the above command in the form.
 
 
