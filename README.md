@@ -136,3 +136,43 @@ If you don't install the certificate yet click [here](https://twiki.cern.ch/twik
 `edmFileUtil, edmDumpEventContent, edmProvDump, edmEventSize`
 
 The overall collection of CMS software, referred to as [CMSSW](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCMSSWFramework), is built around a Framework, an Event Data Model ([EDM](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCMSSWFramework#EdM)), and Services needed by the simulation, calibration and alignment, and reconstruction modules that process event data so that physicists can perform analysis. The primary goal of the Framework and EDM is to facilitate the development and deployment of reconstruction and analysis software. The CMS Event Data Model (EDM) is centered around the concept of an Event. An Event is a C++ object container for all RAW and reconstructed data related to a particular collision.To understand what is in a data file and more, several EDM utilities are available. In this exercise, one will use three of these EDM utilities. They will be very useful at CMSDAS and after. More about these EDM utilities can be found at [WorkBookEdmUtilities](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookEdmUtilities). These together with the [Github web interface for CMSSW](https://github.com/cms-sw/cmssw) and the [CMS LXR Cross Referencer](http://cmslxr.fnal.gov/source) are very useful to understand and write CMS code. 
+
+#### edmFileUtil 
+
+Use edmFileUtil to find the physical file name (PFN) corresponding to the logical file name (LFN) from a MiniAOD file.
+
+`edmFileUtil -d /store/relval/CMSSW_9_3_0_pre5/RelValZMM_13/MINIAODSIM/93X_mc2017_realistic_v2-v1/00000/96FBB6F5-0E92-E711-841B-0025905B85C0.root`
+
+#### edmDumpEventContent
+
+Next we will use edmDumpEventContent to dump a summary of the products that are contained within the file we're interested. Use edmDumpEventContent to see what class names etc. to use in order to access the objects in the MiniAOD file. If you want to look at a specific object (say, slimmedMuons) then execute
+
+`edmDumpEventContent --all --regex slimmedMuons root://cmsxrootd.fnal.gov//store/user/cmsdas/2018/pre_exercises/0EE14BA8-41BB-E611-AD2F-0CC47A4D760A.root`
+
+The output of edmDumpEventContent has information divided into four variable width columns. The first column is the C++ class type of the data, the second is module label, the third is product instance label and the fourth is process name. More information is available at Identifying Data in the Event.
+
+Run again using:
+
+`edmDumpEventContent root://cmsxrootd.fnal.gov//store/user/cmsdas/2018/pre_exercises/0EE14BA8-41BB-E611-AD2F-0CC47A4D760A.root > EdmDumpEventContent.txt`
+
+and answer:
+
+- 0) How many modules produce products of type vector ? 
+
+- 1) What are the names of three of the modules that produce products of type vector? 
+
+#### edmProvDump 
+
+To aid in understanding the full history of an analysis, the framework accumulates provenance for all data stored in the standard ROOT output files. Using the command edmProvDump one can print out all the tracked parameters used to create the data file. For example, one can see which modules were run and the CMSSW version used to make the MiniAOD file. In executing the command below it is important to follow the instructions carefully, otherwise a large number of warning messages may appear. The ROOT warning messages can be ignored. 
+
+`edmProvDump root://cmsxrootd.fnal.gov//store/user/cmsdas/2018/pre_exercises/0EE14BA8-41BB-E611-AD2F-0CC47A4D760A.root > EdmProvDump.txt`
+
+EdmProvDump.txt is a very large file of the order of 40000-60000 lines. Open and look at this file and locate Processing History.
+
+- 2) Which version of CMSSW_?_?_? was used to produce the MiniAOD file? 
+
+#### edmEventSize 
+
+Finally we will execute edmEventSize to determine the size of different branches in the data file. Further details may be found here: [SWGuideEdmEventSize](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEdmEventSize). edmEventSize isn't actually a 'Core' helper function (anyone can slap 'edm' on the front of a program in CMSSW). You can use edmFileUtil to get a PFN from an LFN (as shown above) so you could combine the call 
+
+` edmEventSize -v ``edmFileUtil -d /store/user/cmsdas/2018/pre_exercises/0EE14BA8-41BB-E611-AD2F-0CC47A4D760A.root`` > EdmEventSize.txt `
