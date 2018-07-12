@@ -12,7 +12,7 @@ Login in the SPRACE Cluster:
 
 Copy the python files in the folder:
 
-`/home/denerslemos/public/CMSDAS-pre/`
+`/home/denerslemos/public/CMSDAS-pre/Set1/`
 
 Once copied, change the permission using:
 
@@ -192,10 +192,103 @@ Analyzing physics data at CMS is a very complicated task involving multiple step
 
 The main contents of the MiniAOD are: 
 
-- High level physics objects (leptons, photons, jets, E<sub>T</sub><sup>miss</sup>), with detailed information in order to allow e.g. retuning of identification criteria, saved using [PAT dataformats](https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookPATDataFormats). Some preselection requirements are applied on the objects, and objects failing these requirements are either not stored or stored only with a more limited set of information.
+- High level physics objects (leptons, photons, jets, E<sub>T</sub><sup>miss</sup>), with detailed information in order to allow e.g. retuning of identification criteria, saved using [PAT dataformats](https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookPATDataFormats). Some pre=selection requirements are applied on the objects, and objects failing these requirements are either not stored or stored only with a more limited set of information.
 Some high level corrections are applied: L1+L2+L3(+residual) corrections to jets, type1 corrections to E<sub>T</sub><sup>miss</sup>. 
 
-- 
+- The full list of particles reconstructed by the ParticleFlow, though only storing the most basic quantities for each object (4-vector, impact parameter, pdg id, some quality flags), and with reduced numerical precision; these are useful to recompute isolation, or to perform jet substructure studies.
+For charged particles with p<sub>T</sub> > 0.9 GeV, more information about the associated track is saved, including the covariance matrix, so that they can be used for b-tagging purposes. 
+
+- MC Truth information: a subset of the genParticles enough to describe the hard scattering process, jet flavour information, and final state leptons and photons; GenJets with p<sub>T</sub> > 8 GeV are also stored, and so are the other mc summary information (e.g event weight, LHE header, PDF, PU information).
+In addition, all the stable [genParticles](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookGenParticleCandidate) with mc status code 1 are also saved, to allow reclustering of GenJets with different algorithms and substructure studies. 
+
+- Trigger information: MiniAOD contains the trigger bits associated to all paths, and all the trigger objects that have contributed to firing at least one filter within the trigger. In addition, we store all objects reconstructed at L1 and the L1 global trigger summary, and the prescale values of all the triggers. 
+
+Please note that the files used in the following are from older releases, but they still illustrate the points they intended to.
+
+The Z to dimoun MC file `root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_MiniAODZMM730pre1.root` is made in `CMSSW_7_3_0_pre1` release and the datafile `root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_Data_706_MiniAOD.root` made from the collisions dataskim `/DoubleMu/CMSSW_7_0_6-GR_70_V2_AN1_RelVal_zMu2011A-v1/MINIAOD`.
+
+In your working directory, try to open the MC root file `root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_MiniAODZMM730pre1.root`.To do that we will use the [ROOT framework](https://root.cern.ch/).
+
+`root -l
+
+gSystem->Load("libFWCoreFWLite.so");
+
+FWLiteEnabler::enable();
+
+gSystem->Load("libDataFormatsFWLite.so");
+
+gROOT->SetStyle ("Plain");
+
+gStyle->SetOptStat(111111);
+
+TFile *theFile = TFile::Open("root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_MiniAODZMM730pre1.root");
+
+TBrowser b;`
+
+TBrowser is a graphical browser. It runs on the computer, where you started ROOT. Its graphical interface needs to be forwarded to your computer. This can be very slow. You either need a lot of patience, a good connection or you can try to run ROOT locally, copying the root files that are to be inspected.
+
+In TBrowser open the root file and go to:
+
+`patMuons_slimmedMuons__PAT -> patMuons_slimmedMuons__PAT.obj -> pt()`
+
+To quit the TBrowser use `.q`.
+
+- 0) What is the mean value of the muon pt() for the MC data? 
+
+Do the same for the datafile (root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_Data_706_MiniAOD.root) and answer:
+
+- 1) What is the mean value of the muon pt() for the collision data? 
+
+End of the First Set.
+
+
+## Second Set
+
+### Exercise 7 - Slim MiniAOD sample from Exercise 6 to reduce its size by keeping only Muon and Electron branches 
+
+In order to reduce the size of the MiniAOD we would like to keep only the slimmedMuons and slimmedElectrons objects and drop all others. Copy the configuration (python) files in `/home/denerslemos/public/CMSDAS-pre/Set2/`.  To work with this config filse and make the slim MiniAOD, execute the following steps in the directory CMSSW_9_3_2/src/
+
+Now run the commands:
+
+`cmsRun slimMiniAOD_MC_MuEle_cfg.py`
+
+This produces an output file called slimMiniAOD_MC_MuEle.root
+
+`cmsRun slimMiniAOD_data_MuEle_cfg.py`
+
+This produces an output file called slimMiniAOD_data_MuEle.root
+
+You can use the EDM tools to extract some information. Also you can open this files using TBrowser.
+
+- 0) What is the size of the MiniAOD slimMiniAOD_MC_MuEle.root? 
+
+- 1) What is the size of the MiniAOD slimMiniAOD_data_MuEle.root? 
+
+- 2) What is the mean eta of the muons for MC? 
+
+- 3) What is the mean eta of the muons for data? 
+
+- 4) What is the size of the output file compared to the original sample?
+
+- 5) Is the mean eta for muons for MC and data the same as in the original sample in Exercise 6? 
+
+### Exercise 8 - Use FWLite on the MiniAOD created in Exercise 7 and make a Z Peak (applying pt and eta cuts)
+
+FWLite (pronounced "framework-light") is basically a ROOT session with CMS data format libraries loaded. CMS uses ROOT to persistify data objects. CMS data formats are thus "ROOT-aware"; that is, once the shared libraries containing the ROOT-friendly description of CMS data formats are loaded into a ROOT session, these objects can be accessed and used directly from within ROOT like any other ROOT class! 
+
+ In this exercise we will make a ZPeak using our data and MC sample. We will use the corresponding slim MiniAOD created in Exercise 7. To read more about FWLite, have a look at Section 3.5 of Chapter 3 of the [WorkBook](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBook). We will first make a ZPeak. We will loop over the slimmedMuons in the MiniAOD and get the mass of oppositely charged muons. These are filled in a histogram that is written to an output ROOT file. 
+ 
+ Make sure that you get github setup properly as in obtain a GitHub account and key.
+ 
+ To check out the package, run: 
+ 
+ `git cms-addpkg PhysicsTools/FWLite`
+ 
+ Then to compile the packages, do 
+ 
+ `scram b -j 8
+
+cmsenv`
 
 
 
