@@ -6,7 +6,7 @@ CMSSW is the CMS SoftWare framework used in our collaboration to process and ana
 
 ### Exercise 1 - Cut and Paste 
 
-Enter in the SPRACE Cluster:
+Login in the SPRACE Cluster:
 
 `ssh -XY user@access.sprace.org.br`
 
@@ -184,5 +184,19 @@ NOTE: Use only one apostrophe (between -v and edmFileUtil e the same between ...
 Open and look at file EdmEventSize.txt and locate the line containing the text `patJets_slimmedJetsPuppi__RECO`. There are two numbers following this text that measure the plain and the compressed size of this branch. 
 
 - 4) What are these two numbers? 
+
+
+### Exercise 6 - MiniAOD
+
+Analyzing physics data at CMS is a very complicated task involving multiple steps, sharing of expertise, cross checks, and comparing different analysis. To maximize physics productivity, CMS developed a new high-level data tier MiniAOD in Spring 2014 to serve the needs of the mainstream physics analyses while keeping a small event size (30-50 kb/event), with easy access to the algorithms developed by Physics Objects Groups (POGs) in the framework of the CMSSW offline software. The production of MiniAODs will be done centrally for common samples. Its goal is to centralize the production of PAT tuple which were used among the Physics Analysis Groups (PAGs) in Run 1. (Information about PAT can be found in [SWGuidePAT](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuidePAT) and in a [CMS conference note](http://cdsweb.cern.ch/record/1196152).) MiniAOD samples will be used in the Run 2 analysis. Hence it is important to know about this tool. More information about MiniAOD can be found in [WorkBookMiniAOD](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookMiniAOD). 
+
+The main contents of the MiniAOD are: 
+
+- High level physics objects (leptons, photons, jets, E<sub>T<sub>miss), with detailed information in order to allow e.g. retuning of identification criteria, saved using [PAT dataformats](https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookPATDataFormats). Some preselection requirements are applied on the objects, and objects failing these requirements are either not stored or stored only with a more limited set of information.
+Some high level corrections are applied: L1+L2+L3(+residual) corrections to jets, type1 corrections to E<sub>T<sub><up>miss<up>. 
+
+- 
+
+
 
 
