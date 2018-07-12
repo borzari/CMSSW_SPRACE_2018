@@ -125,6 +125,14 @@ First, set your certificate
 
 `voms-proxy-init --voms cms`
 
+If you don't install the certificate yet click [here](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookStartingGrid) or [here-2](https://ca.cern.ch/ca/help/?kbid=024010)
+
  Then you can execute the query with: 
  
- `das_client.py --query="dataset=/DoubleMuon*/Run2017C-PromptReco-v3/MINIAOD" --format=plain`
+ `das_client --query="dataset=/DoubleMuon*/Run2017C-PromptReco-v3/MINIAOD" --format=plain`
+
+### Exercise 5 - EDM (Event Data Model framework)
+
+`edmFileUtil, edmDumpEventContent, edmProvDump, edmEventSize`
+
+The overall collection of CMS software, referred to as [CMSSW](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCMSSWFramework), is built around a Framework, an Event Data Model ([EDM](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCMSSWFramework#EdM)), and Services needed by the simulation, calibration and alignment, and reconstruction modules that process event data so that physicists can perform analysis. The primary goal of the Framework and EDM is to facilitate the development and deployment of reconstruction and analysis software. The CMS Event Data Model (EDM) is centered around the concept of an Event. An Event is a C++ object container for all RAW and reconstructed data related to a particular collision.To understand what is in a data file and more, several EDM utilities are available. In this exercise, one will use three of these EDM utilities. They will be very useful at CMSDAS and after. More about these EDM utilities can be found at [WorkBookEdmUtilities](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookEdmUtilities). These together with the [Github web interface for CMSSW](https://github.com/cms-sw/cmssw) and the [CMS LXR Cross Referencer](http://cmslxr.fnal.gov/source) are very useful to understand and write CMS code. 
