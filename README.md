@@ -176,3 +176,13 @@ EdmProvDump.txt is a very large file of the order of 40000-60000 lines. Open and
 Finally we will execute edmEventSize to determine the size of different branches in the data file. Further details may be found here: [SWGuideEdmEventSize](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEdmEventSize). edmEventSize isn't actually a 'Core' helper function (anyone can slap 'edm' on the front of a program in CMSSW). You can use edmFileUtil to get a PFN from an LFN (as shown above) so you could combine the call 
 
 `edmEventSize -v ``edmFileUtil -d root://cmsxrootd.fnal.gov//store/user/cmsdas/2018/pre_exercises/0EE14BA8-41BB-E611-AD2F-0CC47A4D760A.root`` > EdmEventSize.txt`
+
+NOTE: Use only one apostrophe (between -v and edmFileUtil e the same between ...root and EdmEventSize.txt).
+
+- 3) What is the number of events?
+
+Open and look at file EdmEventSize.txt and locate the line containing the text `patJets_slimmedJetsPuppi__RECO`. There are two numbers following this text that measure the plain and the compressed size of this branch. 
+
+- 4) What are these two numbers? 
+
+
