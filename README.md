@@ -89,4 +89,42 @@ To finish uses the command
 
 ### Exercise 4 - Find data in the DAS ( Data Aggregation Service) 
 
-In this exercise we will locate the MC dataset RelValZMM (Z -> μμ) and the collision dataset /DoubleMuon/Run2017C-PromptReco-v3/MINIAOD using the Data Aggregation Service
+In this exercise we will locate the MC dataset RelValZMM (Z -> μμ) and the collision dataset /DoubleMuon/Run2017C-PromptReco-v3/MINIAOD using the Data Aggregation Service.
+
+Go to the url [DAS](https://cmsweb.cern.ch/das/). Need the certificate in your browser.
+
+Search for:
+
+`dataset release=CMSSW_9_3_0_pre5 dataset=/RelValZMM*/*CMSSW_9_3_0*/MINIAOD*`
+
+This will search for datasets, processed with release CMSSW_9_3_0_pre5, which is named like /RelValZMM*/*CMSSW_9_3_0*/MINIAOD*. The syntax for searches is found [here](https://cmsweb.cern.ch/das/faq), with many useful common search patterns under "CMS Queries".
+
+Look for /RelValZMM_13/CMSSW_9_3_0_pre5-93X_mc2017_realistic_v2-v1/MINIAODSIM and answer:
+
+- 0) What is the size of this dataset? 
+
+- 1) Click on "Sites" to get a list of sites hosting this data. Is this data at FNAL? Is this data at DESY? 
+
+Back in the main dataset page, click on the link "Files" to get a list of the root files in our selected dataset. One of the files it contains should look like this: 
+
+`/store/relval/CMSSW_9_3_0_pre5/RelValZMM_13/MINIAODSIM/93X_mc2017_realistic_v2-v1/00000/96FBB6F5-0E92-E711-841B-0025905B85C0.root`
+
+If you want to know the name of the dataset from the name of a file, one can go to [DAS](https://cmsweb.cern.ch/das/) and type
+
+`dataset file=/store/relval/CMSSW_9_3_0_pre5/RelValZMM_13/MINIAODSIM/93X_mc2017_realistic_v2-v1/00000/96FBB6F5-0E92-E711-841B-0025905B85C0.root`
+
+Now we will locate a collisions dataset skim using the keyword search which is sometimes more convenient if you know the dataset you are looking for. In [DAS](https://cmsweb.cern.ch/das/) type:
+
+`dataset=/DoubleMu*/*Run2017C*/MINIAOD*`
+
+- 2) What release was the dataset containing 12Sep2017 collected in?
+
+Having set your CMSSW environment one can also search for the dataset `/DoubleMuon/Run2017C-PromptReco-v3/MINIAOD` by invoking the DAS command in your WORKING DIRECTORY. The DAS commands das_client and dasgoclient are in the path for CMSSW_9 versions and above, so you do not need to download anything additional.
+
+First, set your certificate
+
+`voms-proxy-init --voms cms`
+
+ Then you can execute the query with: 
+ 
+ `das_client.py --query="dataset=/DoubleMuon*/Run2017C-PromptReco-v3/MINIAOD" --format=plain`
