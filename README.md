@@ -290,6 +290,11 @@ FWLite (pronounced "framework-light") is basically a ROOT session with CMS data 
 
 `cmsenv`
 
+To make a Z peak, we will use the FWLite executable called FWLiteHistograms. The corresponding code should be in $CMSSW_BASE/src/PhysicsTools/FWLite/bin/FWLiteHistograms.cc
+
+To make a ZPeak from this executable, using the MC MiniAOD, run the following command:
+
+``FWLiteHistograms inputFiles=slimMiniAOD_MC_MuEle.root outputFile=ZPeak_MC.root maxEvents=-1 outputEvery=100`
 
 
-
+This will not work/
