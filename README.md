@@ -294,7 +294,77 @@ To make a Z peak, we will use the FWLite executable called FWLiteHistograms. The
 
 To make a ZPeak from this executable, using the MC MiniAOD, run the following command:
 
-``FWLiteHistograms inputFiles=slimMiniAOD_MC_MuEle.root outputFile=ZPeak_MC.root maxEvents=-1 outputEvery=100`
+`FWLiteHistograms inputFiles=slimMiniAOD_MC_MuEle.root outputFile=ZPeak_MC.root maxEvents=-1 outputEvery=100`
 
 
-This will not work/
+This will not work. This error occurs because your input files slimMiniAOD_MC_MuEle.root is a MiniAOD and does not contain reco::Muon whose label is muons. It contains, however, slimmedMuons (check yourself by opening the root file with ROOT browser).
+
+To solve that, go to FWLiteHistograms.cc and change:
+
+`reco::Muon -> pat::Muon`
+
+and 
+
+`muons -> slimmedMuons`
+
+Now you need to re-compile and run again.
+
+You can see that now it runs successfully and you get a ROOT file with a histogram called ZPeak_MC.root. Open this ROOT file and see the Z mass peak histogram called mumuMass.
+
+- 0) What is mean mass of the ZPeak for your MC MiniAOD? 
+
+- 1) How can you increase statistics in your ZPeak histogram? 
+
+If you look at the code FWLiteHistograms.cc, it also contains the defaults corresponding to the above command line options. Answer the following question: 
+
+- 2) What is the default name of the output file? 
+
+### Exercise 9 - Re-run the above executable with the data MiniAOD
+
+After that, re-run for the data file:
+
+`FWLiteHistograms inputFiles=slimMiniAOD_data_MuEle.root outputFile=ZPeak_data.root maxEvents=-1 outputEvery=100`
+
+and answer:
+
+- 0) What is mean mass of the ZPeak for your data MiniAOD? 
+
+- 1) How can you increase statistics in your ZPeak histogram? 
+
+#### Exercise 10 and 11 - Fireworks - CMS Event Display 
+
+First copy the python file in `/home/denerslemos/public/` in your $CMSSW_BASE/src and run:
+
+`cmsRun copy_CMSDAS_cfg.py`
+
+This will copy 100 events to a file called DYJetsToLL_n100.root. To also copy the data file, open copy_CMSDAS_cfg.py and replace DYJetsToLL with DoubleMuon everywhere, there should be two occurrences of DYJetsToLL and run again.
+
+After that copy both root files inyour local machine using scp.
+
+Download the event display in your local machine:
+
+`wget http://cern.ch/cmsshow/cmsShow-9.4-1.linux.tar.gz`
+
+Unzip
+
+`tar xzf  cmsShow-9.4-1.linux.tar.gz`
+
+and than run with your both root files, using:
+
+`./cmsShow --no-version-check file.root`
+
+and answer:
+
+- 0) What is pT of the highest pT muon that you see in the first event? 
+
+- 1) What is Run number? 
+
+- 2) What is the LS number? 
+
+- 3) How many tracks does the first event have? 
+
+- 4) How many primary vertices are in the first event of DoubleMuon_n100.root? 
+
+End of the Second Set.
+
+``
