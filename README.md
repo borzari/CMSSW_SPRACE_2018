@@ -209,21 +209,21 @@ The Z to dimoun MC file `root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exer
 
 In your working directory, try to open the MC root file `root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_MiniAODZMM730pre1.root`.To do that we will use the [ROOT framework](https://root.cern.ch/).
 
-`root -l
+`root -l`
 
-gSystem->Load("libFWCoreFWLite.so");
+`gSystem->Load("libFWCoreFWLite.so");`
 
-FWLiteEnabler::enable();
+`FWLiteEnabler::enable();`
 
-gSystem->Load("libDataFormatsFWLite.so");
+`gSystem->Load("libDataFormatsFWLite.so");`
 
-gROOT->SetStyle ("Plain");
+`gROOT->SetStyle ("Plain");`
 
-gStyle->SetOptStat(111111);
+`gStyle->SetOptStat(111111);`
 
-TFile *theFile = TFile::Open("root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_MiniAODZMM730pre1.root");
+`TFile *theFile = TFile::Open("root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_MiniAODZMM730pre1.root");`
 
-TBrowser b;`
+`TBrowser b;`
 
 TBrowser is a graphical browser. It runs on the computer, where you started ROOT. Its graphical interface needs to be forwarded to your computer. This can be very slow. You either need a lot of patience, a good connection or you can try to run ROOT locally, copying the root files that are to be inspected.
 
@@ -286,9 +286,9 @@ FWLite (pronounced "framework-light") is basically a ROOT session with CMS data 
  
  Then to compile the packages, do 
  
- `scram b -j 8
+`scram b -j 8`
 
-cmsenv`
+`cmsenv`
 
 
 
