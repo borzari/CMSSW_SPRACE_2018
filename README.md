@@ -97,7 +97,7 @@ Search for:
 
 `dataset release=CMSSW_9_3_0_pre5 dataset=/RelValZMM*/*CMSSW_9_3_0*/MINIAOD*`
 
-This will search for datasets, processed with release CMSSW_9_3_0_pre5, which is named like /RelValZMM*/*CMSSW_9_3_0*/MINIAOD*. The syntax for searches is found [here](https://cmsweb.cern.ch/das/faq), with many useful common search patterns under "CMS Queries".
+This will search for datasets, processed with release CMSSW_9_3_0_pre5, which is named like /RelValZMM*/\*CMSSW_9_3_0\*/MINIAOD*. The syntax for searches is found [here](https://cmsweb.cern.ch/das/faq), with many useful common search patterns under "CMS Queries".
 
 Look for /RelValZMM_13/CMSSW_9_3_0_pre5-93X_mc2017_realistic_v2-v1/MINIAODSIM and answer:
 
