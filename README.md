@@ -192,8 +192,8 @@ Analyzing physics data at CMS is a very complicated task involving multiple step
 
 The main contents of the MiniAOD are: 
 
-- High level physics objects (leptons, photons, jets, E<sub>T<sub>miss), with detailed information in order to allow e.g. retuning of identification criteria, saved using [PAT dataformats](https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookPATDataFormats). Some preselection requirements are applied on the objects, and objects failing these requirements are either not stored or stored only with a more limited set of information.
-Some high level corrections are applied: L1+L2+L3(+residual) corrections to jets, type1 corrections to E<sub>T<sub><up>miss<up>. 
+- High level physics objects (leptons, photons, jets, E<sub>T</sub><sup>miss</sup>), with detailed information in order to allow e.g. retuning of identification criteria, saved using [PAT dataformats](https://twiki.cern.ch/twiki/bin/view/CMS/WorkBookPATDataFormats). Some preselection requirements are applied on the objects, and objects failing these requirements are either not stored or stored only with a more limited set of information.
+Some high level corrections are applied: L1+L2+L3(+residual) corrections to jets, type1 corrections to E<sub>T</sub><sup>miss</sup>. 
 
 - 
 
