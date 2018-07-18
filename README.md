@@ -229,7 +229,7 @@ TBrowser is a graphical browser. It runs on the computer, where you started ROOT
 
 In TBrowser open the root file and go to:
 
-`patMuons_slimmedMuons__PAT -> patMuons_slimmedMuons__PAT.obj -> pt()`
+`Events -> patMuons_slimmedMuons__PAT -> patMuons_slimmedMuons__PAT.obj -> pt()`
 
 To quit the TBrowser use `.q`.
 
