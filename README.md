@@ -450,3 +450,13 @@ Now let us try to submit this job via crab by
 
 For the detail of the crab command, you can find them from [CRAB3Commands](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial#CRAB_commands).
 
+Now you might notice a directory called crab_projects is created under CMSSW_9_3_2/src/. See what is under that directory. After you submitted the job successfully, you can check the status of a task by executing the following CRAB command: 
+
+`crab status crab_projects/crab_CMSDAS_MC_generation_test0`
+
+Now you can take a break and have some fun. Come back after couple hours and check the status again. 
+
+From the bottom of the output, you can see the name of the dataset and the DAS link to it. Congratulations! This is the your first CMS dataset. 
+
+  - 1) What is the dataset name you published?
+
