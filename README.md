@@ -367,4 +367,36 @@ and answer:
 
 End of the Second Set.
 
-``
+## Third Set
+
+#### Exercise 12 - Verify your grid certificate is OK
+
+This exercise depends on obtaining a grid certificate and VOMS membership, but does not depend on any previous exercises. 
+
+`voms-proxy-init -voms cms`
+
+`voms-proxy-info -all | grep -Ei "role|subject"`
+
+- 0) Copy the output.
+
+#### Exercise 13 - Setup CRAB
+
+Go to
+
+`CMSSW_9_3_2/src`
+
+Setup CRAB:
+
+`source /cvmfs/cms.cern.ch/crab3/crab.sh`
+
+see the CRAB version:
+
+`which crab`
+
+or 
+
+`crab --version`
+
+Give the following command
+
+`crab checkwrite --site=T2_BR_SPRACE`
