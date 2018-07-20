@@ -381,9 +381,21 @@ This exercise depends on obtaining a grid certificate and VOMS membership, but d
 
 #### Exercise 13 - Setup CRAB
 
+##### CRAB Introduction 
+
+In this exercise, you will learn an important tool [CRAB](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideCrab), which is used in all the data analysis at CMS. CRAB is a utility to submit CMSSW jobs to distributed computing resources. By using CRAB you will be able to access CMS data and Monte-Carlo which are distributed to CMS aligned centres worldwide and exploit the CPU and storage resources at CMS aligned centres.
+
+HELP or QUESTIONS about CRAB3: Follow the [FAQ](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideCrab#Getting_support) to get help with CRAB3. 
+
+The most recent CRAB3 tutorial which is always in the [WorkBook](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBook) under [WorkBookCRABTutorial](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial). This tutorial provides complete instructions for beginner and expert user to use CRAB3 in their studies. We strongly recommend you to learn the CRAB3 tutorial after you finish these exercises.In this exercise, you will use CRAB3 to generate a MC sample yourself and publish it to the [DBS](https://twiki.cern.ch/twiki/bin/view/CMS/DBS-TDR?redirectedfrom=CMS.DBS). 
+
+##### Setup CRAB
+
 Go to
 
 `CMSSW_9_3_2/src`
+
+`cmsenv`
 
 Setup CRAB:
 
@@ -397,6 +409,44 @@ or
 
 `crab --version`
 
+ - 0) Which CRAB version are you using?
+
 Give the following command
 
 `crab checkwrite --site=T2_BR_SPRACE`
+
+ - 1) What is name of your directory name in store?
+ 
+ #### Exercise 14 - Generate and publish a QCD dataset with CRAB
+ 
+ ##### CMSSW configuration file to generate MC events
+ 
+ In this section we provide an example of a CMSSW parameter-set configuration file to generate minimum bias events with the Pythia MC generator. We call it CMSDAS_MC_generation.py. Using CRAB to generate MC events requires some special settings in the CRAB configuration file, as we will show later. 
+ 
+ We use the [cmsDriver](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideCmsDriver) tool to generate our configuration file (in your folder CMSSW_9_3_2/src/): 
+ 
+ `cmsDriver.py MinBias_13TeV_pythia8_TuneCUETP8M1_cfi  --conditions auto:run2_mc -n 10 --era Run2_2016 --eventcontent FEVTDEBUG --relval 100000,300 -s GEN,SIM --datatier GEN-SIM --beamspot Realistic50ns13TeVCollision --fileout file:step1.root --no_exec --python_filename CMSDAS_MC_generation.py`
+ 
+ Feel free to browse the newly outputted `CMSDAS_MC_generation.py`.
+ 
+  ##### Generating MC events locally
+  
+  Use:
+  
+  `cmsRun CMSDAS_MC_generation.py &> out.txt &`
+  
+ - 0) What is the file size of step1.root? 
+ 
+ 
+  ##### Generate and publish MC dataset using CRAB
+  
+  CRAB is handled by a configuration file. In CRAB3, the configuration file is in Python language. Here we give an example CRAB configuration file to run the `CMSDAS_MC_generation.py` MC event generation code. We name it `crabConfig_MC_generation.py`. Copy and paste this file in your CMSSW folder.
+  
+   All available CRAB configuration parameters are defined at [CRAB3Configuration](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial#CRAB_configuration_file).
+
+Now let us try to submit this job via crab by 
+
+`crab submit -c crabConfig_MC_generation.py`
+
+For the detail of the crab command, you can find them from [CRAB3Commands](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial#CRAB_commands).
+
