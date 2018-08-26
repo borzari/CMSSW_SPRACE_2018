@@ -455,5 +455,3 @@ Now you might notice a directory called crab_projects is created under CMSSW_9_3
 `crab status crab_projects/crab_CMSDAS_MC_generation_test0`
 
 Now you can take a break and have some fun. Come back after couple hours and check the status again. 
-
-From the bottom of the output, you can see the name of the dataset and the DAS link to it. Congratulations! This is the your first CMS dataset. 
