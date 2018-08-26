@@ -235,7 +235,7 @@ To quit the TBrowser use `.q`.
 
 - 0) What is the mean value of the muon pt() for the MC data? 
 
-Do the same for the datafile (root://cmseos.fnal.gov//store/user/cmsdas/2018/pre_exercises/CMSDataAnaSch_Data_706_MiniAOD.root) and answer:
+Do the same for the datafile (/home/denerslemos/public/CMSDAS-pre/Set1/DYJetsToLL_n100.root) and answer:
 
 - 1) What is the mean value of the muon pt() for the collision data? 
 
@@ -246,7 +246,7 @@ End of the First Set.
 
 ### Exercise 7 - Slim MiniAOD sample from Exercise 6 to reduce its size by keeping only Muon and Electron branches 
 
-In order to reduce the size of the MiniAOD we would like to keep only the slimmedMuons and slimmedElectrons objects and drop all others. Copy the configuration (python) files in `/home/denerslemos/public/CMSDAS-pre/Set2/`.  To work with this config filse and make the slim MiniAOD, execute the following steps in the directory CMSSW_9_3_2/src/
+In order to reduce the size of the MiniAOD we would like to keep only the slimmedMuons and slimmedElectrons objects and drop all others. Copy the configuration (python) files in `/home/denerslemos/public/CMSDAS-pre/Set2/`.  To work with this config. files and make the slim MiniAOD, execute the following steps in the directory CMSSW_9_3_2/src/
 
 Now run the commands:
 
@@ -417,7 +417,7 @@ Give the following command
 
  - 1) What is name of your directory name in store?
  
- #### Exercise 14 - Generate and publish a QCD dataset with CRAB
+ #### Exercise 14 - Generate a QCD dataset with CRAB
  
  ##### CMSSW configuration file to generate MC events
  
@@ -457,6 +457,3 @@ Now you might notice a directory called crab_projects is created under CMSSW_9_3
 Now you can take a break and have some fun. Come back after couple hours and check the status again. 
 
 From the bottom of the output, you can see the name of the dataset and the DAS link to it. Congratulations! This is the your first CMS dataset. 
-
-  - 1) What is the dataset name you published?
-
