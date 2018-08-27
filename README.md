@@ -454,6 +454,8 @@ Now you might notice a directory called crab_projects is created under CMSSW_9_3
 
 `crab status crab_projects/crab_CMSDAS_MC_generation_test0`
 
+ - 1) Where do you save the results?
+
 Do the same using data. Copy the file `crabConfig_data_slimMiniAOD.py` (`/home/denerslemos/public/CMSDAS-pre/Set3/`) and run:
 
 `crab submit -c crabConfig_data_slimMiniAOD.py`
@@ -466,6 +468,6 @@ When each of the sets of jobs is complete, all the output is staged, etc., run c
 
 `crab report`
 
- - 1) How many events were analyzed? 
+ - 2) How many events were analyzed? 
 
 Download the files in the Access machine using srm.
