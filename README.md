@@ -466,4 +466,6 @@ When each of the sets of jobs is complete, all the output is staged, etc., run c
 
 `crab report`
 
+ - 1) How many events were analyzed? 
+
 Download the files in the Access machine using srm.
