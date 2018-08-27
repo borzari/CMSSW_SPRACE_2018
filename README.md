@@ -438,7 +438,7 @@ Give the following command
  - 0) What is the file size of step1.root? 
  
  
-  ##### Generate and publish MC dataset using CRAB
+  ##### Generate MC dataset using CRAB
   
   CRAB is handled by a configuration file. In CRAB3, the configuration file is in Python language. Here we give an example CRAB configuration file to run the `CMSDAS_MC_generation.py` MC event generation code. We name it `crabConfig_MC_generation.py` (`/home/denerslemos/public/CMSDAS-pre/Set3/`). Copy and paste this file in your CMSSW folder.
   
