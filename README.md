@@ -470,4 +470,6 @@ When each of the sets of jobs is complete, all the output is staged, etc., run c
 
  - 2) How many events were analyzed? 
 
-Download the files in the Access machine using srm.
+Download the files in the Access machine using [srm](https://github.com/denerslemos/CMSSW_SPRACE_2018/blob/Linux_SSH_Git/README.md). And view the reconstructed Z peak in the combined data using:
+
+`FWLiteHistograms inputFiles=File1.root, File2.root, File3.root, File4.root outputFile=ZPeak_data.root maxEvents=-1 outputEvery=100`
