@@ -301,11 +301,11 @@ This will not work. This error occurs because your input files slimMiniAOD_MC_Mu
 
 To solve that, go to FWLiteHistograms.cc and change:
 
-`reco::Muon -> pat::Muon`
+`using reco::Muon -> using pat::Muon`
 
 and 
 
-`muons -> slimmedMuons`
+`event.getByLabel(std::string("muons"), muons); -> event.getByLabel(std::string("slimmedMuons"), muons);`
 
 Now you need to re-compile and run again.
 
@@ -440,7 +440,7 @@ Give the following command
  
   ##### Generate and publish MC dataset using CRAB
   
-  CRAB is handled by a configuration file. In CRAB3, the configuration file is in Python language. Here we give an example CRAB configuration file to run the `CMSDAS_MC_generation.py` MC event generation code. We name it `crabConfig_MC_generation.py`. Copy and paste this file in your CMSSW folder.
+  CRAB is handled by a configuration file. In CRAB3, the configuration file is in Python language. Here we give an example CRAB configuration file to run the `CMSDAS_MC_generation.py` MC event generation code. We name it `crabConfig_MC_generation.py` (`/home/denerslemos/public/CMSDAS-pre/Set3/`). Copy and paste this file in your CMSSW folder.
   
    All available CRAB configuration parameters are defined at [CRAB3Configuration](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCRAB3Tutorial#CRAB_configuration_file).
 
@@ -454,4 +454,16 @@ Now you might notice a directory called crab_projects is created under CMSSW_9_3
 
 `crab status crab_projects/crab_CMSDAS_MC_generation_test0`
 
+Do the same using data. Copy the file `crabConfig_data_slimMiniAOD.py` (`/home/denerslemos/public/CMSDAS-pre/Set3/`) and run:
+
+`crab submit -c crabConfig_data_slimMiniAOD.py`
+
 Now you can take a break and have some fun. Come back after couple hours and check the status again. 
+
+When each of the sets of jobs is complete, all the output is staged, etc., run crab status and crab report one final time: 
+
+`crab status`
+
+`crab report`
+
+Download the files in the Access machine using srm.
