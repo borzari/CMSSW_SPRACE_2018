@@ -235,7 +235,7 @@ To quit the TBrowser use `.q`.
 
 - 0) What is the mean value of the muon pt() for the MC data? 
 
-Do the same for the datafile (/home/denerslemos/public/CMSDAS-pre/Set1/DYJetsToLL_n100.root) and answer:
+Do the same for the datafile (/home/denerslemos/public/CMSDAS-pre/Set1/MiniAOD_data.root) and answer:
 
 - 1) What is the mean value of the muon pt() for the collision data? 
 
