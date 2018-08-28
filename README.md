@@ -343,11 +343,23 @@ After that copy both root files inyour local machine using scp.
 
 Download the event display in your local machine:
 
+Linux
+
 `wget http://cern.ch/cmsshow/cmsShow-9.4-1.linux.tar.gz`
+
+Mac
+
+`wget http://cern.ch/cmsshow/cmsShow-9.2.mac.tar.gz`
 
 Unzip
 
+Linux
+
 `tar xzf  cmsShow-9.4-1.linux.tar.gz`
+
+Mac
+
+`gunzip -c foo.tar.gz | tar xopf -`
 
 and than run with your both root files, using:
 
