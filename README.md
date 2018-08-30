@@ -560,7 +560,7 @@ The output ROOT file myZPeak_fwlite.root is a bit different from myZPeak.root ma
  
 ###  Exercise 19 - Fitting the Z mass peak 
   
-  The main intention of fitting the Z mass peak is to show how to fit a distribution. To do this exercise will need the root file that you made in Exercises 17 and 18. Let us take the root file myZPeakCRAB.root for this exercise. Yo can use myZPeakCRAB_fwlite.root also, but just make sure to have the right name of the ROOT file. Both of these have the histogram mumuMass and that is what is important. The different distribution that we would fit to the Z mass peak are: 
+  The main intention of fitting the Z mass peak is to show how to fit a distribution. To do this exercise will need the root file that you made in Exercises 17 and 18. Let us take the root file myZPeak.root for this exercise. Yo can use myZPeak_fwlite.root also, but just make sure to have the right name of the ROOT file. Both of these have the histogram mumuMass and that is what is important. The different distribution that we would fit to the Z mass peak are: 
   
  `Gaussian`
  
