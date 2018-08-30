@@ -331,7 +331,7 @@ and answer:
 
 - 1) How can you increase statistics in your ZPeak histogram? 
 
-#### Exercise 10 and 11 - Fireworks - CMS Event Display 
+### Exercise 10 and 11 - Fireworks - CMS Event Display 
 
 First copy the python file in `/home/denerslemos/public/` in your $CMSSW_BASE/src and run:
 
@@ -381,7 +381,7 @@ End of the Second Set.
 
 ## Third Set
 
-#### Exercise 12 - Verify your grid certificate is OK
+### Exercise 12 - Verify your grid certificate is OK
 
 This exercise depends on obtaining a grid certificate and VOMS membership, but does not depend on any previous exercises. 
 
@@ -391,7 +391,7 @@ This exercise depends on obtaining a grid certificate and VOMS membership, but d
 
 - 0) Copy the output.
 
-#### Exercise 13 - Setup CRAB
+### Exercise 13 - Setup CRAB
 
 ##### CRAB Introduction 
 
@@ -429,7 +429,7 @@ Give the following command
 
  - 1) What is name of your directory name in store?
  
- #### Exercise 14 - Generate a QCD dataset with CRAB
+ ### Exercise 14 - Generate a QCD dataset with CRAB
  
  ##### CMSSW configuration file to generate MC events
  
@@ -468,7 +468,7 @@ Now you might notice a directory called crab_projects is created under CMSSW_9_3
 
  - 1) Where do you save the results?
  
- #### Exercise 15 - Running on dataset with CRAB
+ ### Exercise 15 - Running on dataset with CRAB
 
 Do the same using data. Copy the file `crabConfig_data_slimMiniAOD.py` (`/home/denerslemos/public/CMSDAS-pre/Set3/`) and run:
 
@@ -484,7 +484,7 @@ When each of the sets of jobs is complete, all the output is staged, etc., run c
 
  - 2) How many events were analyzed? 
  
- #### Exercise 16 - View the reconstructed Z peak in the combined data
+ ### Exercise 16 - View the reconstructed Z peak in the combined data
  
 Use the FWLiteHistograms executable you were using in the previous exercises to aggregate the data from all the CRAB output files. Download the files in the Access machine using [srm](https://github.com/denerslemos/CMSSW_SPRACE_2018/blob/Linux_SSH_Git/README.md). And view the reconstructed Z peak in the combined data using:
 
@@ -495,7 +495,7 @@ Use the FWLiteHistograms executable you were using in the previous exercises to 
 In this set of exercises, we will analyze the MiniAOD file that was made in Third Set of Exercise. You must have this skimmed MiniAOD stored locally (at your Tier-2) in order to access them. We will use different options of analyzing the MiniAOD, namely, EDAnalyzer, FWLite executable, FWLite Macro and FWLite PyROOT. We will basically re-make the Zpeak and few other histograms and store them in an output root file. In the exercise in the end we will try to fit with a Gaussian, Breit-Wigner function etc. 
 
 
- #### Exercise 17 - Analyzing MiniAOD with an EDAnalyzer
+ ### Exercise 17 - Analyzing MiniAOD with an EDAnalyzer
  
  In this exercise we will analyze the MiniAODs created in Third Set of Exercise using an EDAnalyzer. In these MiniAODs, if you recall, we saved only the Muons and Electrons. So do not look for Jets or Photons or other objects as they were simply not saved. We will use a python config file and an EDAnalyzer ( a .cc file) to make a Z mass peak. 
  
@@ -526,7 +526,7 @@ In this set of exercises, we will analyze the MiniAOD file that was made in Thir
 
 If you want you can try to do all this with your crab results.
  
- #### Exercise 18 - Analyzing MiniAOD with an FWLite executable 
+ ### Exercise 18 - Analyzing MiniAOD with an FWLite executable 
 
 In this exercise we will make the same ROOT file `myZPeak.root` as in Exercise 17, but we call it `myZPeak_fwlite.root` so that you do not end of overwriting the file previously made in Exercise 17.
 
@@ -557,7 +557,7 @@ The output ROOT file myZPeak_fwlite.root is a bit different from myZPeak.root ma
  If you want you can try to do all this with your crab results.
  
  
-  #### Exercise 19 - Fitting the Z mass peak 
+###  Exercise 19 - Fitting the Z mass peak 
   
   The main intention of fitting the Z mass peak is to show how to fit a distribution. To do this exercise will need the root file that you made in Exercises 17 and 18. Let us take the root file myZPeakCRAB.root for this exercise. Yo can use myZPeakCRAB_fwlite.root also, but just make sure to have the right name of the ROOT file. Both of these have the histogram mumuMass and that is what is important. The different distribution that we would fit to the Z mass peak are: 
   
