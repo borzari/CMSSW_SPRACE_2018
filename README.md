@@ -467,6 +467,8 @@ Now you might notice a directory called crab_projects is created under CMSSW_9_3
 `crab status crab_projects/crab_CMSDAS_MC_generation_test0`
 
  - 1) Where do you save the results?
+ 
+ #### Exercise 15 - Running on dataset with CRAB
 
 Do the same using data. Copy the file `crabConfig_data_slimMiniAOD.py` (`/home/denerslemos/public/CMSDAS-pre/Set3/`) and run:
 
@@ -481,7 +483,56 @@ When each of the sets of jobs is complete, all the output is staged, etc., run c
 `crab report`
 
  - 2) How many events were analyzed? 
-
-Download the files in the Access machine using [srm](https://github.com/denerslemos/CMSSW_SPRACE_2018/blob/Linux_SSH_Git/README.md). And view the reconstructed Z peak in the combined data using:
+ 
+ #### Exercise 16 - View the reconstructed Z peak in the combined data
+ 
+Use the FWLiteHistograms executable you were using in the previous exercises to aggregate the data from all the CRAB output files. Download the files in the Access machine using [srm](https://github.com/denerslemos/CMSSW_SPRACE_2018/blob/Linux_SSH_Git/README.md). And view the reconstructed Z peak in the combined data using:
 
 `FWLiteHistograms inputFiles=File1.root, File2.root, File3.root, File4.root outputFile=ZPeak_data.root maxEvents=-1 outputEvery=100`
+
+## Fourth Set
+
+In this set of exercises, we will analyze the MiniAOD file that was made in Third Set of Exercise. You must have this skimmed MiniAOD stored locally (at your Tier-2) in order to access them. We will use different options of analyzing the MiniAOD, namely, EDAnalyzer, FWLite executable, FWLite Macro and FWLite PyROOT. We will basically re-make the Zpeak and few other histograms and store them in an output root file. In the exercise in the end we will try to fit with a Gaussian, Breit-Wigner function etc. 
+
+
+ #### Exercise 17 - Analyzing MiniAOD with an EDAnalyzer
+ 
+ In this exercise we will analyze the MiniAODs created in Third Set of Exercise using an EDAnalyzer. In these MiniAODs, if you recall, we saved only the Muons and Electrons. So do not look for Jets or Photons or other objects as they were simply not saved. We will use a python config file and an EDAnalyzer ( a .cc file) to make a Z mass peak. 
+ 
+ First we will add the PhysicsTools/PatExamples package as follows to YOURWORKINGAREA/CMSSW_9_3_2/src. The PatExamples package has lot of examples for a user to try. However, we will add our own code and config file to it and then compile. To add this package, do this (in your `$CMSSW_BASE/src/`):
+ 
+`git cms-addpkg PhysicsTools/PatExamples`
+
+ The python config file `analyzePatBasics_cfg.py` should be in PhysicsTools/PatExamples/test/ directory. The EDAnalyzer named `PatBasicAnalyzer.cc` should be in your PhysicsTools/PatExamples/plugins/ directory.
+ 
+ 
+ First cut, paste and save the following two files (both in `/home/denerslemos/public/CMSDAS-pre/Set4/`. Save MyZPeakAnalyzer.cc in PhysicsTools/PatExamples/src/ and MyZPeak_cfg.py in CMSSW_9_3_2/src/. 
+ 
+ Now, go back to `src/` and compile
+ 
+ `scram b -j 8`
+ 
+ After successful compilation, you must run the config file as follows: 
+ 
+ `cmsRun MyZPeak_cfg.py`
+ 
+ - 0) What is the number of entries in the mumuMass plot ?
+ 
+ - 1) What is the mean mass in the mumuMass plot ?
+ 
+ - 2) What is the mean pT, eta and phi for muons?
+ 
+ - 3) What is the mean pT, eta and phi for electrons?
+
+ Re-run using your crab results and answer: 
+ 
+ - 5) What is the mass in the mumuMass plot using data sample ?
+ 
+ - 6) What is the mean pT, eta and phi for muons using data sample ?
+ 
+ - 7) What is the mass in the mumuMass plot using MC sample ?
+ 
+ - 8) What is the mean pT, eta and phi for muons using MC sample ?
+
+Exercise 18 - Analyzing MiniAOD with an FWLite executable 
+
