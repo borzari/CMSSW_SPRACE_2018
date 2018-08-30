@@ -1,10 +1,59 @@
-# CMSSW SPRACE 2018
+# PyRoot
 
-The complexibility of Compact Muon Solenoid (CMS) detector and the large amount of data collected by it requires a dedicated software called CMS SoftWare (CMSSW), which is a fundamental tool to perform the  physical analysis with the data. 
-The CMSSW consists of more than a thousand sub-packages providing an extensive toolkit for users to carry out analysis of data. 
-It also gathers services needed by the reconstruction modules that process the data. 
-The CMSSW is complex tool and a study is important to understand and use this software in the specific analysis.
+ This exercise is intended to provide you with basic familiarity with pyROOT provides bindings for all classes within the ROOT libraries and allows for replacing the usual C++ with the often less cumbersome python. The goal is to obtain a general understanding of the syntax required to import and make use of the ROOT libraries within a basic python script. Various examples are provided in order to demonstrate TH1 histogram manipulation including; reading from a .root file, creating, binning, re-binning, scaling, plotting and fitting to a Gaussian.
 
-This course is based in the workbook ([CMSSW WorkBook](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBook)) and in the pre-exercises from the CMS Data Analisys School (CMSDAS) which happend in 2018, January 8-12 at Fermilab, Chicago - EUA ([CMSDAS 2018-1](https://indico.cern.ch/event/662371/)). CMSDAS is a school designed to help CMS physicists from across the collaboration to learn, or to learn more, about CMS analysis and thereby to participate in significant ways in any physics analysis including future discoveries.  It enables physicists beginning analysis to easily join an ongoing analysis in a productive way. The school is divided in three parts: 1) the pre-exercises, whitch is made before the school and prepare the students to plunge into data analysis; 2) The short exercises (several hours duration) cover all of the objects from jets to muons and many techniques from event generators to setting upper limits; They occur during the first half of the school; and 3) Long exercises (the shorts exercises depends on the choosed long exercise) are devoted to perform detailed physics measurements using CMS data in a 2.5-day intensive period by focused teams of about 6-8 students. CMSDAS is hands-on, 90% of the time students work with data, in many cases performing analyses that go beyond the state of the art at CMS. Students have a finite chance of making a physics discovery during the school. The next CMSDAS will happen in September 10-14 at Desy, Hamburg - Germany ([CMSDAS 2018-2](https://indico.desy.de/indico/event/19108/)).
+Whether you use python or C++ to complete your analysis is a personal preference however with the current lack of documentation on pyROOT many students stick with C++ in order to ensure their access to coding examples and experts. It is our hope that through providing you with this basic introduction and Github repository of example scripts, which you are encouraged to add to, that we can bring together the existing pyROOT community within CMS and foster its growth. 
 
-The main idea of this course is help students (undergraduate and graduate) to undestand a little bit more about the CMSSW and them they can work in exercises in the Access SPRACE cluster or in the LXPLUS machine. 
+You can look [pyROOT tutorial](https://www-zeuthen.desy.de/~middell/public/pyroot/pyroot.html).
+
+First, we can open a TBrowser in python:
+
+`python -i`
+
+`>>> import ROOT`
+
+`>>>tb = ROOT.TBrowser()`
+
+### Exercise 21 - Introduction to pyROOT
+
+Clone in your $CMSSW_BASE/src/ this git folder:
+
+`https://github.com/denerslemos/pyROOTforCMSDAS.git`
+
+After this, you can check the contents of the test directory :
+
+`cd pyROOTforCMSDAS/test`
+
+`ls -l`
+
+##### Example 1 - Make a histogram
+
+We begin with a very short example illustrating an efficient way to import the ROOT libraries, read a histogram from a .root file, then plot it on a canvas. First have a look in:
+
+`hist1.py`
+
+So let's run the script to produce the same histogram that we just viewed from the TBrowser: 
+
+`python -i hist1.py`
+
+If you do not want to keep the graphical display of the histogram open when you run the script, and only run the script (to produce the output file) while suppressing the graphics: 
+
+`python hist1.py -b`
+
+
+##### Example 1 - Fit a histogram
+
+We proceed with another short example which builds on the first but also illustrates some commonly used histogram manipulations such as; creating, binning, re-binning, scaling, fitting to a Gaussian and saving to various file types.
+
+First, lets have a look at the file: 
+
+`hist2.py`
+
+Now if we run the script we see the following output with information about the fit for each histogram.  
+
+`python -i hist2.py`
+
+
+- 0) What is the mean value of the Gaussian fit of the jet mass spectrum for jets of pt 300-400 GeV ? 
+
+ Hopefully this extremely brief introduction has peaked your interest in pyROOT and encouraged you to learn more about this versatile tool. 
