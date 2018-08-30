@@ -607,7 +607,95 @@ The output ROOT file myZPeak_fwlite.root is a bit different from myZPeak.root ma
 
 To fit a generator-level Z peak a Breit-Wigner fit makes sense. However, reconstructed-level Z peaks have many detector resolutions that smear the Z mass peak. If the detector resolution is relatively poor, then it is usually good enough to fit a gaussian (since the gaussian detector resolution will overwhelm the inherent Briet-Wigner shape of the peak). If the detector resolution is fairly good, then another option is to fit a Breit-Wigner (for the inherent shape) convoluted with a gaussian (to describe the detector effects).This is in the "no-background" case. If you have backgrounds in your sample (Drell-Yan, cosmics, etc...), and you want to do the fit over a large mass range, then another function needs to be included to take care of this - an exponential is commonly used. 
 
+##### Fitting a Gaussian
 
 
+There are several options to fit a Gaussian 
+
+###### Using the inbuilt Gaussian in ROOT 
+
+`root -l`
+
+`TFile f("myZPeak.root");`
+
+`f.cd("analyzeBasicPat");`
+
+`gStyle->SetOptFit(111111);`   
+
+`mumuMass->Fit("gaus");`
+
+Save this histogram as pdf or postscript or eps file using the menu of the histogram window. As you can see we should fit a sub-range as this fit is not a good fit. In the next part of this exercise, we will fit a sub-range of the mumuMass distribution, but for this we will use a ROOT macro as using inbuilt ROOT functions have very minimal usage. For more complex or useful fitting functions, one has to use a macro. 
+
+`root -l`
+
+`TFile f("myZPeak.root");`
+
+`f.cd("analyzeBasicPat");`
+
+`gStyle->SetOptFit(111111);`   
+
+`g1 = new TF1("m1","gaus",85,95);`
+
+`mumuMass->Fit(g1,"R");`
+
+- 0) What is the value of the mean Z Mass that you get?
+
+- 1) What is the value of the chisquare/ndf that you get? 
+
+Now run again in your myZpeak which you create with FWlite an answer
+
+- 2) What is the value of the mean Z Mass that you get?
+
+- 3) What is the value of the chisquare/ndf that you get? 
+
+Now run again in your myZpeak which you create with crab for data sample an answer
+
+- 4) What is the value of the mean Z Mass that you get?
+
+- 5) What is the value of the chisquare/ndf that you get? 
+
+In the last step (I swear) run again in your myZpeak which you create with crab for MC sample an answer
+
+- 6) What is the value of the mean Z Mass that you get?
+
+- 7) What is the value of the chisquare/ndf that you get? 
+
+###### Using a macro of your own in ROOT 
+
+As you have seen above that we should fit a sub-range of the Z mass distribution as the fit in the full range is not all that great. In this exercise, we will fit a sub-range of the mumuMass distribution but for this we will use a ROOT macro as using inbuilt ROOT functions have very minimal usage. For more complex or useful fitting functions, one has to use a macro. The macro to run is `FitZPeak.C` (`/home/denerslemos/public/CMSDAS-pre/Set4/`). This macro calls another macro called `BW.C` (`/home/denerslemos/public/CMSDAS-pre/Set4/`). So please copy, paste and save them with the corresponding names in $CMSSW_BASE/src. Note that now the myZPeak.root file is opened by executing the macro itself, in addition to fitting the Z mass peak. 
+
+To run this macro execute the following command from the area $CMSSW_BASE/src. 
+
+`root -l FitZPeak.C`
+
+- 8) What mean value of Z Mass in the fitted sub-range do you get from gaussian? 
+
+###### Using a macro in RooFit
+
+[RooFit](https://twiki.cern.ch/twiki/bin/view/CMS/RooFit) is a toolkit integrated with ROOT that performs different kinds of fits and Toy Monte Carlo generations based on user-defined models of Probability Density Functions (PDF). The macro to fit Z mass peak in RooFit is `RooFitMacro.C`. So please copy and paste RooFitMacro.C (`/home/denerslemos/public/CMSDAS-pre/Set4/`) in $CMSSW_BASE/src. 
+
+Execute the following: 
+
+`root -l RooFitMacro.C`
+
+If is not working, run with:
+
+`root -l`
+
+` gROOT->ProcessLine(".include /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/roofit/5.34.18-cms3/include/");`
+
+`.x RooFitMacro.C`
+
+- 9) What is the mean for the gaussian fit in RooFit?
+
+- 10) What is the sigma for the gaussian fit in RooFit? 
 
 
+##### Fitting a Breit-Wigner 
+
+###### Using a macro in ROOT 
+
+To make fit Breit-Wigner we first uncomment the Breit-Wigner and comment out the Gaussian part in FitZPeak.C(using \/* and \*/).
+Then execute the following: 
+
+`root -l FitZPeak.C`
