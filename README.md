@@ -359,7 +359,7 @@ Linux
 
 Mac
 
-`gunzip -c foo.tar.gz | tar xopf -`
+`gunzip -c cmsShow-9.2.mac.tar.gz | tar xopf -`
 
 and than run with your both root files, using:
 
