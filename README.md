@@ -524,23 +524,7 @@ In this set of exercises, we will analyze the MiniAOD file that was made in Thir
  
  - 3) What is the mean pT, eta and phi for electrons?
 
- Re-run using your crab results and answer: 
- 
- - 4) What is the number of entries in the mumuMass plot using data sample?
- 
- - 5) What is the mass in the mumuMass plot using data sample ?
- 
- - 6) What is the mean pT, eta and phi for muons using data sample ?
- 
- - 7) What is the mean pT, eta and phi for electrons using data sample ?
- 
- - 8) What is the number of entries in the mumuMass plot using MC sample?
- 
- - 9) What is the mass in the mumuMass plot using MC sample ?
- 
- - 10) What is the mean pT, eta and phi for muons using MC sample ?
-
- - 11) What is the mean pT, eta and phi for electrons using MC sample ?
+If you want you can try to do all this with your crab results.
  
  #### Exercise 18 - Analyzing MiniAOD with an FWLite executable 
 
@@ -570,20 +554,7 @@ The output ROOT file myZPeak_fwlite.root is a bit different from myZPeak.root ma
  
  - 2) What is the mean pT, eta and phi for muons?
  
- 
- Re-run using your crab results and answer: 
- 
- - 3) What is the number of entries in the mumuMass plot using data sample ?
- 
- - 4) What is the mean mass in the mumuMass plot using data sample ?
- 
- - 5) What is the mean pT, eta and phi for muons using data sample ?
- 
- - 6) What is the number of entries in the mumuMass plot using MC sample ?
- 
- - 7) What is the mean mass in the mumuMass plot using MC sample ?
- 
- - 8) What is the mean pT, eta and phi for muons using MC sample ?
+ If you want you can try to do all this with your crab results.
  
  
   #### Exercise 19 - Fitting the Z mass peak 
@@ -648,17 +619,7 @@ Now run again in your myZpeak which you create with FWlite an answer
 
 - 3) What is the value of the chisquare/ndf that you get? 
 
-Now run again in your myZpeak which you create with crab for data sample an answer
-
-- 4) What is the value of the mean Z Mass that you get?
-
-- 5) What is the value of the chisquare/ndf that you get? 
-
-In the last step (I swear) run again in your myZpeak which you create with crab for MC sample an answer
-
-- 6) What is the value of the mean Z Mass that you get?
-
-- 7) What is the value of the chisquare/ndf that you get? 
+If you want you can try to do all this with your crab results.
 
 ###### Using a macro of your own in ROOT 
 
