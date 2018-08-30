@@ -482,13 +482,14 @@ When each of the sets of jobs is complete, all the output is staged, etc., run c
 
 `crab report`
 
- - 2) How many events were analyzed? 
+ - 0) How many events were analyzed? 
  
  ### Exercise 16 - View the reconstructed Z peak in the combined data
  
 Use the FWLiteHistograms executable you were using in the previous exercises to aggregate the data from all the CRAB output files. Download the files in the Access machine using [srm](https://github.com/denerslemos/CMSSW_SPRACE_2018/blob/Linux_SSH_Git/README.md). And view the reconstructed Z peak in the combined data using:
 
 `FWLiteHistograms inputFiles=File1.root,File2.root,File3.root,File4.root outputFile=ZPeak_data.root maxEvents=-1 outputEvery=100`
+
 
 ## Fourth Set
 
@@ -629,7 +630,7 @@ To run this macro execute the following command from the area $CMSSW_BASE/src.
 
 `root -l FitZPeak.C`
 
-- 8) What mean value of Z Mass in the fitted sub-range do you get from gaussian? 
+- 4) What mean value of Z Mass in the fitted sub-range do you get from gaussian? 
 
 ###### Using a macro in RooFit
 
@@ -647,9 +648,9 @@ If is not working, run with:
 
 `.x RooFitMacro.C`
 
-- 9) What is the mean for the gaussian fit in RooFit?
+- 5) What is the mean for the gaussian fit in RooFit?
 
-- 10) What is the sigma for the gaussian fit in RooFit? 
+- 6) What is the sigma for the gaussian fit in RooFit? 
 
 
 ##### Fitting a Breit-Wigner 
@@ -661,9 +662,9 @@ Then execute the following:
 
 `root -l FitZPeak.C`
 
-- 11) What is the mean for Breit-Wigner fit using the macro?
+- 7) What is the mean for Breit-Wigner fit using the macro?
 
-- 12) What is the sigma for Breit-Wigner fit using the macro? 
+- 8) What is the sigma for Breit-Wigner fit using the macro? 
 
 ###### Using a macro in RooFit
 
@@ -672,9 +673,9 @@ Then execute the following:
 
 `root -l RooFitMacro.C`
 
-- 12) What is the mean for Breit-Wigner fit using RooFit tool ?
+- 9) What is the mean for Breit-Wigner fit using RooFit tool ?
 
-- 13) What is the sigma for Breit-Wigner fit using RooFit tool ? 
+- 10) What is the sigma for Breit-Wigner fit using RooFit tool ? 
 
 ##### Fitting a Convolution of Gaussian and Breit-Wigner (Voigtian)
 
@@ -683,6 +684,6 @@ Then execute the following:
 
 `root -l RooFitMacro.C`
 
-- 14) What is the mean for the convoluted fit using - RooFit tool?
+- 11) What is the mean for the convoluted fit using - RooFit tool?
 
-- 15) What is the sigma for the convoluted fit using - RooFit tool? 
+- 12) What is the sigma for the convoluted fit using - RooFit tool? 
