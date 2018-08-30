@@ -52,13 +52,12 @@ If you like to work in your own computer you can download files or folders using
 
 Sometimes we need to copy files for the grid structure, to do that we need to use srm (to use that the certificate is requested).
 ##### Show the list of files
-`srmls srm://...`
+`srmls srm://osg-se.sprace.org.br:8443/srm/managerv2?SFN=/pnfs/sprace.org.br/data/cms/store/user/username/...`
 
 ##### Copy files
-`srmcp srm://...`
+`srmcp srm://osg-se.sprace.org.br:8443/srm/managerv2?SFN=/pnfs/sprace.org.br/data/cms/store/user/username/...`
 
-
-
+The username is the same in your certificate.
 
 ## Vi or Vim
 Vi or Vim is a screen-oriented text editor originally created for the Unix operating system.
