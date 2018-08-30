@@ -562,7 +562,7 @@ Now go to $CMSSW_BASE/src/ re-compile and `cmsenv`. Run using
 
  A successful running of the FWLite executable FWLiteWithPythonConfig results in an output file called myZPeak_fwlite.root.
 
-The output ROOT file myZPeak_fwlite.root is a bit different from myZPeakCRAB.root made in Exercise 17 since we did not make any of the electron histograms. The histograms do have the mumuMass, besides, muonEta, muonPhi and muonPt. 
+The output ROOT file myZPeak_fwlite.root is a bit different from myZPeak.root made in Exercise 17 since we did not make any of the electron histograms. The histograms do have the mumuMass, besides, muonEta, muonPhi and muonPt. 
 
  - 0) What is the number of entries in the mumuMass plot ?
  
@@ -584,6 +584,23 @@ The output ROOT file myZPeak_fwlite.root is a bit different from myZPeakCRAB.roo
  - 7) What is the mean mass in the mumuMass plot using MC sample ?
  
  - 8) What is the mean pT, eta and phi for muons using MC sample ?
+ 
+ 
+  #### Exercise 19 - Fitting the Z mass peak 
+  
+  The main intention of fitting the Z mass peak is to show how to fit a distribution. To do this exercise will need the root file that you made in Exercises 17 and 18. Let us take the root file myZPeakCRAB.root for this exercise. Yo can use myZPeakCRAB_fwlite.root also, but just make sure to have the right name of the ROOT file. Both of these have the histogram mumuMass and that is what is important. The different distribution that we would fit to the Z mass peak are: 
+  
+ `Gaussian`
+ 
+ ![gauss](http://latex.codecogs.com/gif.latex?G%28x%3B%5Cmu%2C%5Csigma%29%3D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%5Csigma%7D%5Cexp%5Cleft%5B-%5Cfrac%7B%28x-%5Cmu%29%7D%7B2%5Csigma%5E%7B2%7D%7D%20%5Cright%20%5D)
+ 
+ `Relativistic Breit-Wigner`
+ 
+ `Convolution of relativistic Breit-Wigner plus interference term with a Gaussian`
+ 
+ Some general remarks about fitting a Z peak:
+
+To fit a generator-level Z peak a Breit-Wigner fit makes sense. However, reconstructed-level Z peaks have many detector resolutions that smear the Z mass peak. If the detector resolution is relatively poor, then it is usually good enough to fit a gaussian (since the gaussian detector resolution will overwhelm the inherent Briet-Wigner shape of the peak). If the detector resolution is fairly good, then another option is to fit a Breit-Wigner (for the inherent shape) convoluted with a gaussian (to describe the detector effects).This is in the "no-background" case. If you have backgrounds in your sample (Drell-Yan, cosmics, etc...), and you want to do the fit over a large mass range, then another function needs to be included to take care of this - an exponential is commonly used. 
 
 
 
