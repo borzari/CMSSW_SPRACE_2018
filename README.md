@@ -488,7 +488,7 @@ When each of the sets of jobs is complete, all the output is staged, etc., run c
  
 Use the FWLiteHistograms executable you were using in the previous exercises to aggregate the data from all the CRAB output files. Download the files in the Access machine using [srm](https://github.com/denerslemos/CMSSW_SPRACE_2018/blob/Linux_SSH_Git/README.md). And view the reconstructed Z peak in the combined data using:
 
-`FWLiteHistograms inputFiles=File1.root, File2.root, File3.root, File4.root outputFile=ZPeak_data.root maxEvents=-1 outputEvery=100`
+`FWLiteHistograms inputFiles=File1.root,File2.root,File3.root,File4.root outputFile=ZPeak_data.root maxEvents=-1 outputEvery=100`
 
 ## Fourth Set
 
@@ -499,7 +499,7 @@ In this set of exercises, we will analyze the MiniAOD file that was made in Thir
  
  In this exercise we will analyze the MiniAODs created in Third Set of Exercise using an EDAnalyzer. In these MiniAODs, if you recall, we saved only the Muons and Electrons. So do not look for Jets or Photons or other objects as they were simply not saved. We will use a python config file and an EDAnalyzer ( a .cc file) to make a Z mass peak. 
  
- First we will add the PhysicsTools/PatExamples package as follows to YOURWORKINGAREA/CMSSW_9_3_2/src. The PatExamples package has lot of examples for a user to try. However, we will add our own code and config file to it and then compile. To add this package, do this (in your `$CMSSW_BASE/src/`):
+ First we will add the PhysicsTools/PatExamples package as follows to $CMSSW_BASE/src. The PatExamples package has lot of examples for a user to try. However, we will add our own code and config file to it and then compile. To add this package, do this (in your `$CMSSW_BASE/src/`):
  
 `git cms-addpkg PhysicsTools/PatExamples`
 
