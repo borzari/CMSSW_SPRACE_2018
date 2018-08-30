@@ -598,7 +598,7 @@ The output ROOT file myZPeak_fwlite.root is a bit different from myZPeak.root ma
  
  ![BW](http://latex.codecogs.com/gif.latex?B%28m%3BM%2C%5CGamma%29%3DN%5Ccdot%5Cfrac%7B2%7D%7B%5Cpi%7D%5Ccdot%5Cfrac%7B%5CGamma%5E%7B2%7DM%5E%7B2%7D%7D%7B%28m%5E%7B2%7D-M%5E%7B2%7D%29%5E%7B2%7D&plus;m%5E%7B4%7D%28%5CGamma%5E%7B2%7D/M%5E%7B2%7D%29%7D)
  
- `Convolution of relativistic Breit-Wigner plus interference term with a Gaussian`
+ `Convolution of relativistic Breit-Wigner plus interference term with a Gaussian (Voigtian)`
  
  ![conv](http://latex.codecogs.com/gif.latex?P%28m%29%3D%5Cint%20B%28m%27%3BM%2C%5CGamma%29%5Ccdot%20G%28m-m%27%3B%5Cmu%2C%5Csigma%29dm%27)
  
@@ -699,3 +699,29 @@ To make fit Breit-Wigner we first uncomment the Breit-Wigner and comment out the
 Then execute the following: 
 
 `root -l FitZPeak.C`
+
+- 11) What is the mean for Breit-Wigner fit using the macro?
+
+- 12) What is the sigma for Breit-Wigner fit using the macro? 
+
+###### Using a macro in RooFit
+
+To make fit Breit-Wigner we first uncomment the Breit-Wigner and comment out the Gaussian part in RooFitMacro.C(using \//).
+Then execute the following: 
+
+`root -l RooFitMacro.C`
+
+- 12) What is the mean for Breit-Wigner fit using RooFit tool ?
+
+- 13) What is the sigma for Breit-Wigner fit using RooFit tool ? 
+
+##### Fitting a Convolution of Gaussian and Breit-Wigner (Voigtian)
+
+To make fit Voigtian we first uncomment the Voigtian and comment out the Breit-Wigner part in RooFitMacro.C(using \//).
+Then execute the following: 
+
+`root -l RooFitMacro.C`
+
+- 14) What is the mean for the convoluted fit using - RooFit tool?
+
+- 15) What is the sigma for the convoluted fit using - RooFit tool? 
