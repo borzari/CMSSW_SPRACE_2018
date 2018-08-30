@@ -506,7 +506,7 @@ In this set of exercises, we will analyze the MiniAOD file that was made in Thir
  The python config file `analyzePatBasics_cfg.py` should be in PhysicsTools/PatExamples/test/ directory. The EDAnalyzer named `PatBasicAnalyzer.cc` should be in your PhysicsTools/PatExamples/plugins/ directory.
  
  
- First cut, paste and save the following two files (both in `/home/denerslemos/public/CMSDAS-pre/Set4/`. Save MyZPeakAnalyzer.cc in PhysicsTools/PatExamples/src/ and MyZPeak_cfg.py in CMSSW_9_3_2/src/. 
+ First cut and paste the following two files (both in `/home/denerslemos/public/CMSDAS-pre/Set4/`. Save MyZPeakAnalyzer.cc in PhysicsTools/PatExamples/src/ and MyZPeak_cfg.py in CMSSW_9_3_2/src/. 
  
  Now, go back to `src/` and compile
  
@@ -526,13 +526,66 @@ In this set of exercises, we will analyze the MiniAOD file that was made in Thir
 
  Re-run using your crab results and answer: 
  
+ - 4) What is the number of entries in the mumuMass plot using data sample?
+ 
  - 5) What is the mass in the mumuMass plot using data sample ?
  
  - 6) What is the mean pT, eta and phi for muons using data sample ?
  
- - 7) What is the mass in the mumuMass plot using MC sample ?
+ - 7) What is the mean pT, eta and phi for electrons using data sample ?
+ 
+ - 8) What is the number of entries in the mumuMass plot using MC sample?
+ 
+ - 9) What is the mass in the mumuMass plot using MC sample ?
+ 
+ - 10) What is the mean pT, eta and phi for muons using MC sample ?
+
+ - 11) What is the mean pT, eta and phi for electrons using MC sample ?
+ 
+ #### Exercise 18 - Analyzing MiniAOD with an FWLite executable 
+
+In this exercise we will make the same ROOT file `myZPeak.root` as in Exercise 17, but we call it `myZPeak_fwlite.root` so that you do not end of overwriting the file previously made in Exercise 17.
+
+First make sure you have checked the following two packages: 
+
+`git cms-addpkg PhysicsTools/FWLite`
+
+`git cms-addpkg PhysicsTools/UtilAlgos`
+
+Cut and paste the following two files (both in `/home/denerslemos/public/CMSDAS-pre/Set4/`). Replace the $CMSSW_BASE/src/PhysicsTools/FWLite/bin/FWLiteWithPythonConfig.cc with this new `FWLiteWithPythonConfig.cc`. 
+
+Paste `parameters.py` in $CMSSW_BASE/src/
+
+Now go to $CMSSW_BASE/src/ re-compile and `cmsenv`. Run using 
+
+`FWLiteWithPythonConfig parameters.py`
+
+ A successful running of the FWLite executable FWLiteWithPythonConfig results in an output file called myZPeak_fwlite.root.
+
+The output ROOT file myZPeak_fwlite.root is a bit different from myZPeakCRAB.root made in Exercise 17 since we did not make any of the electron histograms. The histograms do have the mumuMass, besides, muonEta, muonPhi and muonPt. 
+
+ - 0) What is the number of entries in the mumuMass plot ?
+ 
+ - 1) What is the mean mass in the mumuMass plot ?
+ 
+ - 2) What is the mean pT, eta and phi for muons?
+ 
+ 
+ Re-run using your crab results and answer: 
+ 
+ - 3) What is the number of entries in the mumuMass plot using data sample ?
+ 
+ - 4) What is the mean mass in the mumuMass plot using data sample ?
+ 
+ - 5) What is the mean pT, eta and phi for muons using data sample ?
+ 
+ - 6) What is the number of entries in the mumuMass plot using MC sample ?
+ 
+ - 7) What is the mean mass in the mumuMass plot using MC sample ?
  
  - 8) What is the mean pT, eta and phi for muons using MC sample ?
 
-Exercise 18 - Analyzing MiniAOD with an FWLite executable 
+
+
+
 
